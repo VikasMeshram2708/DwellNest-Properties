@@ -2,11 +2,17 @@
 
 import { LogOut } from "lucide-react";
 import { Button } from "../ui/button";
-import { signOut } from "next-auth/react";
+import { useClerk } from "@clerk/nextjs";
 
 export default function LogoutButton() {
+  const { signOut } = useClerk();
   return (
-    <Button className="rounded" onClick={() => signOut()} variant={"destructive"} type="button">
+    <Button
+      className="rounded"
+      onClick={() => signOut()}
+      variant={"destructive"}
+      type="button"
+    >
       <LogOut />
       <span>Logout</span>
     </Button>
