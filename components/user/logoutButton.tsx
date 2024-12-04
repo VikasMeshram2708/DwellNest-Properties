@@ -8,7 +8,7 @@ export default function LogoutButton() {
   const { signOut } = useClerk();
   return (
     <Button
-      className="rounded"
+      className="rounded w-full"
       onClick={() => signOut()}
       variant={"destructive"}
       type="button"
